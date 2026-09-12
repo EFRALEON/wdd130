@@ -58,7 +58,7 @@ main img {
 p {
     background-color: beige;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0;
 }
 
 footer {
