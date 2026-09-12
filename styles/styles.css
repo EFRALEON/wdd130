@@ -22,10 +22,6 @@ img {
 
 }
 
-p {
-    padding: 10px;
-}
-
 aside {
     width: 20rem;
     margin: 1rem;
@@ -60,7 +56,9 @@ main img {
 }
 
 p {
-    padding: 10px;
+    background-color: beige;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 footer {
