@@ -23,6 +23,7 @@
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    background-color: var(--accent2-color);
 }
 
 /* ==========================================
@@ -33,6 +34,13 @@ main,
 footer {
     width: 840px;
     margin: 0 auto;
+}
+
+header,
+footer {
+    background-color: var(--secondary-color);
+    /* Uso de --secondary-color */
+    padding: 16px;
 }
 
 /* ==========================================
