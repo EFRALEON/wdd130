@@ -1,9 +1,11 @@
+/* ==========================================
+   1. VARIABLES CSS
+   ========================================== */
 :root {
     --primary-color: #055a05;
-    --secondary-color: #f4a261;
-    --accent1-color: #264653;
-    --accent2-color: #e9c46a;
-    /* Color de acento */
+    --secondary-color: #9ebde4;
+    --accent1-color: #335d6e;
+    --accent2-color: #5192e0;
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -17,18 +19,13 @@
     box-sizing: border-box;
 }
 
-/* ==========================================
-   3. ESTILOS BASE DE BODY Y FUENTES
-   ========================================== */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: var(--accent2-color);
 }
 
-/* ==========================================
-   4. LIMITACIÓN Y CENTRADO DE ANCHO DEL MAPA DE LA PÁGINA
-   ========================================== */
+/* Limitación y centrado global */
 header,
 main,
 footer {
@@ -36,88 +33,173 @@ footer {
     margin: 0 auto;
 }
 
-header,
-footer {
+/* ==========================================
+   3. HEADER & NAV (CSS Grid / Flexbox)
+   ========================================== */
+header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
     background-color: var(--secondary-color);
-    /* Uso de --secondary-color */
     padding: 16px;
 }
 
-/* ==========================================
-   5. ESTILOS DE ENCABEZADOS (H1, H2)
-   ========================================== */
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+header .logo {
+    width: 100px;
+    height: auto;
 }
 
-/* ==========================================
-   6. MARGEN Y PADDING BÁSICOS
-   ========================================== */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-/* ==========================================
-   7. ENLACES DE REDES SOCIALES EN ENCABEZADO Y PIE
-   ========================================== */
-.socialmedia a {
+header nav a {
     text-decoration: none;
+    color: var(--accent1-color);
+    background-color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #333;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 /* ==========================================
-   8. ESTILOS DEL HERO DIV CON OVERLAYS (SUPERPOSICIONES)
+   4. HERO SECTION
    ========================================== */
-/* Contenedor relativo para poder posicionar h1 y article de forma absoluta */
 .hero {
     position: relative;
+    margin-bottom: 20px;
 }
 
-/* Imagen de fondo del Hero que ocupa todo el ancho */
 .hero img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Encabezado H1 posicionado sobre la imagen hero */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
-    padding: 16px;
+    padding: 10px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
+    background-color: rgba(38, 70, 83, 0.8);
     color: #ffffff;
+    font-family: var(--heading-font);
 }
 
-/* Artículo posicionado sobre la imagen hero en la parte inferior */
 .hero article {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 16px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Imagen secundaria dentro del article alineada a la derecha */
 .hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 10px;
+    width: 100px;
+    height: auto;
+}
+
+/* ==========================================
+   5. HISTORY SECTION (Layout en 3 Columnas)
+   ========================================== */
+.history {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.history h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.history-grid img {
+    width: 100%;
+    height: auto;
     border-radius: 4px;
 }
 
-/* Limita el ancho de las imágenes dentro de la clase socialmedia */
+/* ==========================================
+   6. ADVENTURE SECTION (5 Imágenes en Fila)
+   ========================================== */
+.adventures {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.adventures h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.adventure-gallery figure {
+    text-align: center;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.adventure-gallery figcaption {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   7. FOOTER (Flexbox)
+   ========================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 16px;
+}
+
+.socialmedi {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
 .socialmedia img {
-    width: 40px;
-    height: auto;
+    width: 32px;
+    height: 32px;
 }
