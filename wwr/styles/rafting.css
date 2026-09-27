@@ -1,11 +1,18 @@
 /* ==========================================
-   1. VARIABLES CSS
+   1. VARIABLES CSS (Estandarización de colores)
    ========================================== */
 :root {
     --primary-color: #055a05;
-    --secondary-color: #9ebde4;
-    --accent1-color: #3f6675;
-    --accent2-color: #5192e0;
+    --secondary-color: #f4a261;
+    --accent1-color: #264653;
+    --accent2-color: #e9c46a;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --border-color: #333333;
+    --light-border: #cccccc;
+    --overlay-dark: rgba(38, 70, 83, 0.8);
+    --overlay-light: rgba(255, 255, 255, 0.9);
+
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
@@ -25,7 +32,7 @@ body {
     background-color: var(--accent2-color);
 }
 
-/* Limitación y centrado global */
+/* Contenedor principal de 840px */
 header,
 main,
 footer {
@@ -58,15 +65,15 @@ header nav {
 header nav a {
     text-decoration: none;
     color: var(--accent1-color);
-    background-color: #ffffff;
+    background-color: var(--white-color);
     padding: 8px 16px;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     font-weight: bold;
 }
 
 header nav a:hover {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--white-color);
 }
 
 /* ==========================================
@@ -89,8 +96,8 @@ header nav a:hover {
     width: 100%;
     padding: 10px;
     text-align: center;
-    background-color: rgba(38, 70, 83, 0.8);
-    color: #ffffff;
+    background-color: var(--overlay-dark);
+    color: var(--white-color);
     font-family: var(--heading-font);
 }
 
@@ -99,12 +106,13 @@ header nav a:hover {
     bottom: 15px;
     left: 20px;
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--overlay-light);
     padding: 15px;
-    border: 1px solid #333;
-
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
 }
 
+/* Cumple con el requisito de float: right en la imagen */
 .hero article img {
     float: right;
     width: 100px;
@@ -114,13 +122,13 @@ header nav a:hover {
 }
 
 /* ==========================================
-   5. HISTORY SECTION (Layout en 3 Columnas)
+   5. HISTORY SECTION (CSS Grid 3 Columnas)
    ========================================== */
 .history {
-    background-color: #ffffff;
+    background-color: var(--white-color);
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-border);
     text-align: center;
 }
 
@@ -135,6 +143,7 @@ header nav a:hover {
     grid-template-columns: 1fr 200px 1fr;
     gap: 15px;
     align-items: center;
+    text-align: left;
 }
 
 .history-grid img {
@@ -144,13 +153,13 @@ header nav a:hover {
 }
 
 /* ==========================================
-   6. ADVENTURE SECTION (5 Imágenes en Fila)
+   6. ADVENTURES SECTION (CSS Grid 5 Columnas)
    ========================================== */
 .adventures {
-    background-color: #ffffff;
+    background-color: var(--white-color);
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-border);
     text-align: center;
 }
 
@@ -174,12 +183,13 @@ header nav a:hover {
     width: 100%;
     height: 100px;
     object-fit: cover;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-border);
 }
 
 .adventure-gallery figcaption {
     font-size: 0.8rem;
     margin-top: 5px;
+    color: var(--accent1-color);
 }
 
 /* ==========================================
@@ -193,7 +203,7 @@ footer {
     padding: 16px;
 }
 
-.socialmedi {
+.socialmedia {
     display: flex;
     gap: 10px;
     margin: 0;
