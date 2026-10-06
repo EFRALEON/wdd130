@@ -1,5 +1,5 @@
 /* ===================================
-   HEADER & FOOTER STYLES (Control de tamaño)
+   HEADER, FOOTER & SOCIAL MEDIA ICONS
    =================================== */
 
 header {
@@ -18,49 +18,42 @@ header .logo {
     height: auto;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: bold;
+/* Control del tamaño de las redes sociales en el Footer */
+.socialmedia {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-header nav a.active {
-    text-decoration: underline;
+/* ESTA REGLA HACE QUE SE VEAN PEQUEÑOS */
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
-/* Footer & Social Media Icons */
+/* Estilo general del Footer */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #333;
-    color: white;
-}
-
-footer .socialmedia {
-    display: flex;
-    gap: 1rem;
-}
-
-/* ESTA REGLA ES CLAVE: limita el tamaño gigante de los SVG */
-footer .socialmedia img {
-    width: 30px;
-    height: 30px;
+    color: #fff;
+    margin-top: 3rem;
 }
 
 /* ===================================
-   CONTACT US PAGE STYLES
+   CONTACT US PAGE (DISEÑO GENERAL)
    =================================== */
 
 .company-info {
     text-align: center;
-    margin: 2rem 0 1.5rem 0;
+    margin: 2.5rem auto 2rem auto;
 }
 
 .company-info h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -72,20 +65,21 @@ footer .socialmedia img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto 3rem auto;
     padding: 0 1rem;
+    align-items: start;
 }
 
 .map-wrapper {
     width: 100%;
-    min-height: 420px;
+    height: 450px;
 }
 
 .map-wrapper iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 6px;
 }
 
@@ -102,7 +96,7 @@ footer .socialmedia img {
 
 .form-item label {
     font-weight: bold;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
 .form-item input[type="text"],
@@ -112,6 +106,8 @@ footer .socialmedia img {
     border: 1px solid #777;
     border-radius: 4px;
     font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .radio-group {
@@ -125,14 +121,13 @@ footer .socialmedia img {
 
 .radio-group legend {
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .radio-group label {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: normal;
     cursor: pointer;
 }
 
@@ -183,8 +178,8 @@ footer .socialmedia img {
 }
 
 .team-gallery img {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 6px;
 }
