@@ -1,4 +1,59 @@
-/* Información central de la empresa */
+/* ===================================
+   HEADER & FOOTER STYLES (Control de tamaño)
+   =================================== */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #333;
+    /* Ajusta al color de tu sitio */
+    color: white;
+}
+
+header .logo {
+    width: 80px;
+    /* Tamaño controlado del logo */
+    height: auto;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a.active {
+    text-decoration: underline;
+}
+
+/* Footer & Social Media Icons */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+
+footer .socialmedia {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ESTA REGLA ES CLAVE: limita el tamaño gigante de los SVG */
+footer .socialmedia img {
+    width: 30px;
+    height: 30px;
+}
+
+/* ===================================
+   CONTACT US PAGE STYLES
+   =================================== */
+
 .company-info {
     text-align: center;
     margin: 2rem 0 1.5rem 0;
@@ -13,7 +68,6 @@
     margin: 0.2rem 0;
 }
 
-/* Grilla principal: Mapa (Izquierda) vs Formulario (Derecha) */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -23,7 +77,6 @@
     padding: 0 1rem;
 }
 
-/* Contenedor del Mapa */
 .map-wrapper {
     width: 100%;
     min-height: 420px;
@@ -36,7 +89,6 @@
     border-radius: 6px;
 }
 
-/* Estilos del Formulario */
 .quiz-form {
     display: flex;
     flex-direction: column;
@@ -62,7 +114,6 @@
     font-size: 1rem;
 }
 
-/* Radio Buttons agrupados */
 .radio-group {
     border: none;
     padding: 0;
@@ -85,7 +136,6 @@
     cursor: pointer;
 }
 
-/* Checkbox */
 .checkbox-item {
     display: flex;
     flex-direction: row;
@@ -99,7 +149,6 @@
     cursor: pointer;
 }
 
-/* Botón de Envío */
 .quiz-form button[type="submit"] {
     padding: 0.8rem;
     background-color: #e0e0e0;
@@ -108,14 +157,12 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .quiz-form button[type="submit"]:hover {
     background-color: #cccccc;
 }
 
-/* Sección de Empleados */
 .team-section {
     text-align: center;
     border-top: 1px solid #ccc;
@@ -148,7 +195,6 @@
     font-size: 0.95rem;
 }
 
-/* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
