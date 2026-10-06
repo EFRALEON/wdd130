@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Quiz</title>
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+    <header>
+        <h1>HTML & CSS Quiz</h1>
+    </header>
+    <main>
+        <form>
+            <!-- Pregunta 1: Texto plano -->
+            <div class="form-item">
+                <label for="q1">1. What does CSS stand for?</label>
+                <input type="text" id="q1" name="q1" required>
+            </div>
+
+            <!-- Pregunta 2: Área de texto (respuesta corta) -->
+            <div class="form-item">
+                <label for="q2">2. Explain the difference between an ID and a class attribute in
+                    HTML:</label>
+                <textarea id="q2" name="q2" rows="4" required></textarea>
+            </div>
+
+            <!-- Pregunta 3: Menú desplegable (<select>) -->
+            <div class="form-item">
+                <label for="q3">3. Which HTML element is used to define the structure of a table
+                    row?</label>
+                <select id="q3" name="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="tr">&lt;tr&gt;</option>
+                    <option value="td">&lt;td&gt;</option>
+                    <option value="table">&lt;table&gt;</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 4: Número entero -->
+            <div class="form-item">
+                <label for="q4">4. How many heading levels are available in HTML (e.g., h1 to
+                    h6)?</label>
+                <input type="number" id="q4" name="q4" min="1" max="10" required>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy;2026 | HTML & CSS Quiz Form</p>
+    </footer>
+</body>
+
+</html>
