@@ -1,216 +1,161 @@
-/* ==========================================
-   1. VARIABLES CSS (Estandarización de colores)
-   ========================================== */
-:root {
-    --primary-color: #055a05;
-    --secondary-color: #f4a261;
-    --accent1-color: #264653;
-    --accent2-color: #e9c46a;
-    --white-color: #ffffff;
-    --black-color: #000000;
-    --border-color: #333333;
-    --light-border: #cccccc;
-    --overlay-dark: rgba(38, 70, 83, 0.8);
-    --overlay-light: rgba(255, 255, 255, 0.9);
-
-    --heading-font: "Times New Roman", "Georgia", serif;
-    --body-font: Arial, Helvetica, sans-serif;
+/* Información central de la empresa */
+.company-info {
+    text-align: center;
+    margin: 2rem 0 1.5rem 0;
 }
 
-/* ==========================================
-   2. RESET DE BOX-MODEL
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.company-info h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-    background-color: var(--accent2-color);
+.company-info p {
+    margin: 0.2rem 0;
 }
 
-/* Contenedor principal de 840px */
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
-}
-
-/* ==========================================
-   3. HEADER & NAV (CSS Grid / Flexbox)
-   ========================================== */
-header {
+/* Grilla principal: Mapa (Izquierda) vs Formulario (Derecha) */
+.contact-container {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: center;
-    background-color: var(--secondary-color);
-    padding: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
 }
 
-header .logo {
-    width: 100px;
-    height: auto;
+/* Contenedor del Mapa */
+.map-wrapper {
+    width: 100%;
+    min-height: 420px;
 }
 
-header nav {
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Estilos del Formulario */
+.quiz-form {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
-header nav a {
-    text-decoration: none;
-    color: var(--accent1-color);
-    background-color: var(--white-color);
-    padding: 8px 16px;
-    border: 1px solid var(--border-color);
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label {
     font-weight: bold;
+    margin-bottom: 0.4rem;
 }
 
-header nav a:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-/* ==========================================
-   4. HERO SECTION
-   ========================================== */
-.hero {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: var(--overlay-dark);
-    color: var(--white-color);
-    font-family: var(--heading-font);
-}
-
-.hero article {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-    right: 20px;
-    background-color: var(--overlay-light);
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-}
-
-/* Cumple con el requisito de float: right en la imagen */
-.hero article img {
-    float: right;
-    width: 100px;
-    height: auto;
-    margin-left: 15px;
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+    padding: 0.6rem;
+    border: 1px solid #777;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
-/* ==========================================
-   5. HISTORY SECTION (CSS Grid 3 Columnas)
-   ========================================== */
-.history {
-    background-color: var(--white-color);
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid var(--light-border);
-    text-align: center;
-}
-
-.history h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.history-grid {
-    display: grid;
-    grid-template-columns: 1fr 200px 1fr;
-    gap: 15px;
-    align-items: center;
-    text-align: left;
-}
-
-.history-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-/* ==========================================
-   6. ADVENTURES SECTION (CSS Grid 5 Columnas)
-   ========================================== */
-.adventures {
-    background-color: var(--white-color);
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid var(--light-border);
-    text-align: center;
-}
-
-.adventures h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.adventure-gallery {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-}
-
-.adventure-gallery figure {
-    text-align: center;
-}
-
-.adventure-gallery img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border: 1px solid var(--light-border);
-}
-
-.adventure-gallery figcaption {
-    font-size: 0.8rem;
-    margin-top: 5px;
-    color: var(--accent1-color);
-}
-
-/* ==========================================
-   7. FOOTER (Flexbox)
-   ========================================== */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    padding: 16px;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 10px;
-    margin: 0;
+/* Radio Buttons agrupados */
+.radio-group {
+    border: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.socialmedia img {
-    width: 32px;
-    height: 32px;
+.radio-group legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Checkbox */
+.checkbox-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-item label {
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Botón de Envío */
+.quiz-form button[type="submit"] {
+    padding: 0.8rem;
+    background-color: #e0e0e0;
+    border: 1px solid #777;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quiz-form button[type="submit"]:hover {
+    background-color: #cccccc;
+}
+
+/* Sección de Empleados */
+.team-section {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.team-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.team-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
+.team-gallery img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.team-gallery figcaption {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .team-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
 }
